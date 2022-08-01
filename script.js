@@ -10,7 +10,7 @@ import {
 } from "./utils.js";
 import { getResource } from "./assets.js";
 
-const main = async () => {
+export const main = async () => {
   const SOLVED_FILE_PATH = join("./", "data.json");
 
   const solved = JSON.parse(getOrCreate(SOLVED_FILE_PATH));
@@ -24,6 +24,6 @@ const main = async () => {
   targets.forEach(printQuestion);
 
   writeSolvedFiles(SOLVED_FILE_PATH, solved, targets);
-};
 
-main();
+  return targets;
+};

@@ -54,7 +54,7 @@ export const findRandomExtinctItems = (items, count) => {
   return Array.from(targets);
 };
 
-const getQuestionUrl = (id) => `https://tsch.js.org/${id}/play/ko`;
+export const getQuestionUrl = (id) => `https://tsch.js.org/${id}/play/ko`;
 
 export const printQuestion = (question) => {
   const [id, difficulty, name] = question.split("-");
