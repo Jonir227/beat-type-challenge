@@ -6,8 +6,9 @@ import {
   getOrCreate,
   findRandomExtinctItems,
   writeSolvedFiles,
+  printQuestion,
 } from './utils.js';
-import { getResource, printQuestion } from './assets.js';
+import { getResource } from './assets.js';
 
 const main = async () => {
   const SOLVED_FILE_PATH = join('./', 'data.json');

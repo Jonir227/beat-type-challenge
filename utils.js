@@ -26,3 +26,11 @@ export const findRandomExtinctItems = (items, count) => {
   }
   return Array.from(targets);
 };
+
+const getQuestionUrl = (id) => `https://tsch.js.org/${id}/play/ko`;
+
+export const printQuestion = (question) => {
+  const [id] = question.split('-');
+
+  console.log(getQuestionUrl(parseInt(id, 10)));
+};
