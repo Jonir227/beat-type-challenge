@@ -1,4 +1,5 @@
 import fs from 'fs';
+import chalk, { Chalk } from 'chalk';
 
 const readFileSync = (path) => fs.readFileSync(path, { encoding: 'utf-8' });
 
@@ -29,8 +30,20 @@ export const findRandomExtinctItems = (items, count) => {
 
 const getQuestionUrl = (id) => `https://tsch.js.org/${id}/play/ko`;
 
-export const printQuestion = (question) => {
-  const [id] = question.split('-');
+const DifficultyColors = {
+  warm: '008080',
+  easy: '7aad0c',
+  medium: 'd9901a',
+  hard: 'de3d37',
+  extreme: 'b11b8d',
+};
 
-  console.log(getQuestionUrl(parseInt(id, 10)));
+export const printQuestion = (question) => {
+  const [id, difficulty, name] = question.split('-');
+
+  console.log(
+    `${chalk.bgHex(DifficultyColors[difficulty])(
+      `[${difficulty}]`
+    )} ${name} : ${getQuestionUrl(parseInt(id, 10))}`
+  );
 };
