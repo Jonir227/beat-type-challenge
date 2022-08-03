@@ -15,7 +15,7 @@ ${questions
   .map((question, i) => {
     const [id, level] = question.split("-");
 
-    return `${i}. ${level.toUpperCase()}: [${question}](${getQuestionUrl(
+    return `${i + 1}. ${level.toUpperCase()}: [${question}](${getQuestionUrl(
       Number(id)
     )})`;
   })
