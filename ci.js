@@ -12,10 +12,10 @@ export const createIssue = async ({ github, context }) => {
 # 오늘의 문제
 
 ${questions
-  .map((question) => {
+  .map((question, i) => {
     const [id, level] = question.split("-");
 
-    return `- ${level.toUpperCase()}: [${question}](${getQuestionUrl(
+    return `${i}. ${level.toUpperCase()}: [${question}](${getQuestionUrl(
       Number(id)
     )})`;
   })
